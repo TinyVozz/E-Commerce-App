@@ -1,19 +1,28 @@
-import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
-import HomePage from './pages/HomePage/HomePage'
-import OrderPage from './pages/OrderPage/OrderPage'
-import ProductPage from './pages/ProductPage/ProductPage'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { routes } from './routes'
+import DefaultComponent from './components/DefaultComponent/DefaultComponent'
+import { Fragment } from 'react'
 
 function App() {
 
   return (
     <div>
-    <Router>
-      <Routes>
-        <Route path="/" element={<HomePage/>} />
-        <Route path="/order" element={<OrderPage/>} />
-        <Route path="/product" element={<ProductPage/>} />
-      </Routes>
-    </Router>
+      <Router>
+        <Routes>
+          {routes.map((route) => {
+            const Page = route.page
+            const Layout = route.isShowHeader ? DefaultComponent : Fragment
+            return (
+              <Route
+                key={route.path} path={route.path} element={
+                  <Layout>
+                    <Page />
+                  </Layout>
+                } />
+            )
+          })}
+        </Routes>
+      </Router>
     </div>
   )
 }
