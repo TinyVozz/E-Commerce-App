@@ -1,0 +1,43 @@
+body {
+    font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: #f5f7fa;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+$themes: (
+    light: (textColor: #000,
+        bg: white,
+        logo: darkblue,
+        bgSoft: #f6f3f3,
+        bgGray: #dedede,
+        textColorSoft: #555,
+        border: lightgray,
+    ),
+    dark: (textColor: whitesmoke,
+        bg: #222,
+        logo: white,
+        bgGray: #333,
+        bgSoft: #333,
+        textColorSoft: lightgray,
+        border: #444,
+    ),
+);
+
+.card-animate {
+    -webkit-transition: all 0.4s;
+    transition: all 0.4s;
+}
+
+.card-animate:hover {
+    -webkit-transform: translateY(calc(-1.5rem / 5));
+    transform: translateY(calc(-1.5rem / 5));
+    -webkit-box-shadow: 0 5px 10px rgba(30, 32, 37, 0.12);
+    box-shadow: 0 5px 10px rgba(30, 32, 37, 0.12);
+}
+
