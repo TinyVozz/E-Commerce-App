@@ -1,11 +1,41 @@
 import HeaderComponent from '../HeaderComponent/HeaderComponent'
+import { Col, Row } from 'antd';
 
-const DefaultComponent = ({children}) => {
+// Dark Mode
+import { ConfigProvider, theme } from "antd";
+import { useEffect, useState } from "react";
+
+const DefaultComponent = ({ children }) => {
+    // Load theme ngay khi app start (không bị flash)
+    const [dark, setDark] = useState(() => {
+        return localStorage.getItem("theme") === "dark";
+    });
+
+    // Khi dark thay đổi → cập nhật body + lưu localStorage
+    useEffect(() => {
+        const currentTheme = dark ? "dark" : "light";
+        document.body.setAttribute("data-theme", currentTheme);
+        localStorage.setItem("theme", currentTheme);
+    }, [dark]);
+
     return (
-        <div>
-            <HeaderComponent />
-            {children}
-        </div>
+        <ConfigProvider
+            theme={{
+                algorithm: dark
+                    ? theme.darkAlgorithm
+                    : theme.defaultAlgorithm,
+            }}
+        >
+            <HeaderComponent dark={dark} setDark={setDark} />
+
+            <Row>
+                <Col span={5}>
+
+                </Col>
+                <Col span={14}>{children}</Col>
+                <Col span={5}></Col>
+            </Row>
+        </ConfigProvider>
     )
 }
 

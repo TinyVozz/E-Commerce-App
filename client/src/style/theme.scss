@@ -1,0 +1,23 @@
+:root {
+    --textColor: #000;
+    --mainbg: #1c8af4;
+    --bg: white;
+    --logo: darkblue;
+    --bgSoft: #f6f3f3;
+    --bgGray: #dedede;
+    --textColorSoft: #555;
+    --border: lightgray;
+}
+
+
+
+[data-theme="dark"] {
+    --textColor: whitesmoke;
+    --mainbg: #222;
+    --bg: #a3a3a3;
+    --logo: white;
+    --bgGray: #333;
+    --bgSoft: #333;
+    --textColorSoft: lightgray;
+    --border: #444;
+}
