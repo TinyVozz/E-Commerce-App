@@ -1,8 +1,7 @@
 
-import { Col, Row, Input } from 'antd';
+import { Col, Row, Input, Button } from 'antd';
 import './HeaderComponent.scss'
-const { Search } = Input;
-import { ShoppingCart, Heart, MoonStar, Sun, User } from 'lucide-react';
+import { ShoppingCart, Heart, MoonStar, Sun, User, Search } from 'lucide-react';
 import { useEffect } from 'react';
 
 const HeaderComponent = ({ dark, setDark }) => {
@@ -26,13 +25,15 @@ const HeaderComponent = ({ dark, setDark }) => {
           </div>
         </Col>
         <Col flex="auto">
-          <Search className='header-input'
+          <div className="d-flex bg-white">
+            <Input size="large"
+            className='header-input'
+            bordered={false}
             placeholder="Input search text"
             allowClear
-            color="default" variant="outlined"
-            size="large"
-          // onSearch={onSearch}
           />
+          <Button size="large" className='header-button' icon={<Search size={16}/>}>Tìm kiếm</Button>
+          </div>
         </Col>
         <Col flex="none">
           <div className="right d-flex align-items-center gap-5 justify-content-between">

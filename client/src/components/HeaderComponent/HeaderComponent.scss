@@ -17,7 +17,14 @@
 
 .header-input {
     width: 100%;
+    background: transparent;
+}
 
+.header-button {
+    border-radius: 0;
+    color: var(--textWhite) !important;
+    border-color: var(--heavybg) !important;
+    background-color: var(--heavybg) !important;
 }
 
 .header-right {
