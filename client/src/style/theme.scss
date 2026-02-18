@@ -1,5 +1,6 @@
 :root {
     --textColor: #000;
+    --textWhite: #fff;
     --mainbg: #1c8af4;
     --bg: white;
     --logo: darkblue;
@@ -7,14 +8,17 @@
     --bgGray: #dedede;
     --textColorSoft: #555;
     --border: lightgray;
+
+    --bodyTextSize: 14px;
 }
 
 
 
 [data-theme="dark"] {
     --textColor: whitesmoke;
+    --textWhite: #dcdcdc;
     --mainbg: #222;
-    --bg: #a3a3a3;
+    --bg: #444;
     --logo: white;
     --bgGray: #333;
     --bgSoft: #333;

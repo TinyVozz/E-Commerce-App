@@ -2,7 +2,7 @@
 import { Col, Row, Input } from 'antd';
 import './HeaderComponent.scss'
 const { Search } = Input;
-import { ShoppingCart, Heart, MoonStar, Sun } from 'lucide-react';
+import { ShoppingCart, Heart, MoonStar, Sun, User } from 'lucide-react';
 import { useEffect } from 'react';
 
 const HeaderComponent = ({ dark, setDark }) => {
@@ -29,18 +29,43 @@ const HeaderComponent = ({ dark, setDark }) => {
           <Search className='header-input'
             placeholder="Input search text"
             allowClear
-            enterButton
+            color="default" variant="outlined"
             size="large"
           // onSearch={onSearch}
           />
         </Col>
-        <Col span={6}>
-          <div className="right d-flex align-items-center justify-content-between">
-            <h3>Đăng nhập / Đăng ký</h3>
+        <Col flex="none">
+          <div className="right d-flex align-items-center gap-5 justify-content-between">
+            {/* <h3>Đăng nhập / Đăng ký</h3> */}
 
-            <div className="d-flex gap-4 p-4">
-              <ShoppingCart />
-              <Heart />
+            {/* <div className="d-flex gap-3 py-3 fs-3">
+              <User /> Tài khoản
+            </div> */}
+
+            <div className="header-userinfo d-flex position-relative gap-3 py-3 fs-3">
+              <User /> Hoàng Long
+
+              <div className="userinfo-container">
+                <div className="userinfo-item">
+                  Thông tin tài khoảng
+                </div>
+
+                <div className="userinfo-item">
+                  Giỏ hàng
+                </div>
+
+                <div className="userinfo-item">
+                  Lịch sử mua hàng
+                </div>
+
+                <div className="userinfo-item">
+                  Đăng xuất
+                </div>
+              </div>
+            </div>
+
+            <div className="d-flex gap-3 py-3 fs-3">
+              <ShoppingCart /> Giỏ hàng
             </div>
           </div>
         </Col>
