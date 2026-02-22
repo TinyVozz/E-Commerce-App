@@ -1,7 +1,7 @@
 
 import { Col, Row, Input, Button } from 'antd';
 import './HeaderComponent.scss'
-import { ShoppingCart, Heart, MoonStar, Sun, User, Search } from 'lucide-react';
+import { ShoppingCart, MoonStar, Sun, User, Search } from 'lucide-react';
 import { useEffect } from 'react';
 
 const HeaderComponent = ({ dark, setDark }) => {

@@ -1,4 +1,5 @@
 import HeaderComponent from '../HeaderComponent/HeaderComponent'
+import LeftBarComponent from '../LeftBarComponent/LeftBarComponent';
 import { Col, Row } from 'antd';
 
 // Dark Mode
@@ -28,13 +29,13 @@ const DefaultComponent = ({ children }) => {
         >
             <HeaderComponent dark={dark} setDark={setDark} />
 
-            <Row>
-                <Col span={5}>
-
-                </Col>
-                <Col span={14}>{children}</Col>
-                <Col span={5}></Col>
+            <div className="container">
+                <Row gutter={[32, 24]} className='mt-4'>
+                <Col span={5}><LeftBarComponent /></Col>
+                <Col span={14} className='bg-danger'>{children}</Col>
+                <Col span={5} className=''></Col>
             </Row>
+            </div>
         </ConfigProvider>
     )
 }
