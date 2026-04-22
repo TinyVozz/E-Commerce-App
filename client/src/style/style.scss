@@ -25,3 +25,11 @@ html {
     -webkit-box-shadow: 0 5px 10px rgba(30, 32, 37, 0.12);
     box-shadow: 0 5px 10px rgba(30, 32, 37, 0.12);
 }
+
+.main-bg{
+    background: var(--bg);
+}
+
+.main-title{
+    color: var(--textWhite)
+}

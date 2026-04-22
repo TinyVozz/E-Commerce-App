@@ -1,3 +1,33 @@
-.card-rounded{
+.card-rounded {
     border-radius: var(--card-rounded);
+}
+
+.custom-title .ant-card-meta-title {
+    display: -webkit-box !important;
+    -webkit-line-clamp: 2 !important;
+    -webkit-box-orient: vertical !important;
+    overflow: hidden !important;
+    white-space: normal !important;
+    font-size: 15px !important;
+    line-height: 1.2;
+}
+
+.item-price {
+    font-weight: 700;
+}
+
+.price-original {
+    text-decoration: line-through;
+}
+
+.price-current,
+.price-discount {
+    color: var(--danger)
+}
+
+.action-btn{
+    display: flex;
+    gap: .5rem;
+    justify-content: center;
+    font-size: 15px;
 }
